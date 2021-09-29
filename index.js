@@ -42,8 +42,7 @@ console.log(numbers);
 var total = 0;
 var limit = 10;
 
-for(i = 0; i <= limit ; i++){
-    console.log(i);
+for(var i = 0; i <= limit ; i++){
     total = total + i
 }
 
@@ -57,7 +56,7 @@ console.log(total)
 var sentence = "Hello Konexio ! "
 var reverse = ""
 
-for (i = 0; i <= sentence.length - 1; i++) {
+for ( var i = 0; i < sentence.length - 1; i++) {
     reverse = sentence[i] + reverse;
 }
 console.log(reverse);
@@ -68,13 +67,15 @@ console.log(reverse);
 // Bonus - 1
 
 var fizzbuzz = 100
-for( i = 0; i <= fizzbuzz ; i++) {
-    if ( i % 15 === 0) {
+for( var i = 0; i <= fizzbuzz ; i++) {
+    if ( i % 3 === 0 && i % 5 === 0 ) {
         console.log('Fizzbuzz')
     } else if (i % 5 === 0) {
         console.log('Buzz')
     } else if (i % 3 === 0) {
         console.log('Fizz')
+    } else if (i % 7 === 0) {
+        console.log("")
     } else {
         console.log(i)
     }
@@ -85,9 +86,47 @@ for( i = 0; i <= fizzbuzz ; i++) {
 var total = 0;
 var limit = 10;
 
-while(i =< limit) {
-    total += i;
-    i++
+var counter = 0
+
+while (counter < limit) {
+    counter++
+    total = total + counter
+    console.log(total)
 }
 
-console.log(total)
+
+// Bonus - 3
+
+var mates = ["Marco","Eloi","Jong","Hélène","Rébecca","Kevin JM","Kévin","Salwa","Hanaa","Ahmed","Alin","Jeremy","Vincent","Bilal","Edouard","Chaïma","Syrine","Séverin","Karimou","Evan"]
+
+// var random = mates[(Math.random() * mates.length)| 0]
+// console.log(random)
+
+    var random = mates[Math.floor(Math.random() * mates.length)]
+    console.log(random)
+
+
+// Bonus - 4
+
+
+var randomArray = []
+
+var min = 0;
+var max = 100;
+
+for ( var i = 0; i < 20 ; i++) {
+    var number = Math.floor(Math.random() * (max - min + 1) +  min)
+    randomArray.push(number)
+}
+
+console.table(randomArray)
+
+var inMax = 0
+
+for (var i = 0; i < randomArray.length; i++) {
+    // console.log(randomArray[i])
+    if (randomArray[i] > inMax) {
+        inMax = randomArray[i]
+    }
+}
+console.log(inMax)
